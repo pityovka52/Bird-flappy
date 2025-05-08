@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ga5th7lvugsr"]
+
+[ext_resource type="Script" uid="uid://dnnsqbwnybecb" path="res://main_menu.gd" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://b8j8g88ty4wux" path="res://assets/bg_night.png" id="2_eiy7p"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_i26rj")
+
+[node name="Background" type="Sprite2D" parent="."]
+process_mode = 1
+position = Vector2(240.5, 400.5)
+scale = Vector2(1.33056, 1.24844)
+texture = ExtResource("2_eiy7p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -46.5
+offset_right = 52.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+modulate = Color(1, 1, 0.298039, 1)
+layout_mode = 2
+text = "Flappy Bird"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Почати гру"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Вийти з гри"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_quit_button_pressed"]
